@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Моя страница</title>
+    <style>
+        body {
+            background-color: #9fa1a1;
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background-color: #333;
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .container {
+            display: flex;
+            justify-content: center;
+            margin: 20px;
+        }
+
+        .column {
+            flex: 1;
+            margin: 10px;
+            padding: 20px;
+            background-color: #fff;
+            box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+        }
+
+        footer {
+            background-color: #333;
+            color: #fff;
+            padding: 10px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Моя страница</h1>
+    </header>
+    
+    <div class="container">
+        <div class="column">
+            <h2>Любимый язык программирования</h2>
+            <img src="https://fuzeservers.ru/wp-content/uploads/1/7/8/178f79c7babe84b5b5a5afda2747b9a9.jpeg" alt="Любимый язык программирования">
+            <p> C# - cовременный объектно-ориентированный и типобезопасный язык программирования. C# позволяет разработчикам создавать разные типы безопасных и надежных приложений, выполняющихся в .NET.</p>
+            <p>Полезные ссылки:</p>
+            <ul>
+                <li><a href="https://metanit.com/sharp/">Metanit</a></li>
+                <li><a href="https://habr.com/ru/hub/csharp/">Habr</a></li>
+                <li><a href="https://learn.microsoft.com/ru-ru/dotnet/csharp/">Документация по C#</a></li>
+            </ul>
+        </div>
+        
+        <div class="column">
+            <h2>Любимая картина</h2>
+            <img src="https://kartinkof.club/uploads/posts/2022-03/1648208849_5-kartinkof-club-p-kamen-ya-ne-dam-mem-5.jpg" alt="Любимая картинка">
+            <p>Мем – «Камень я не дам». Мем появился благодаря культовой ролевой игре «Проклятые земли».Впервые вырезанная фраза ящера появилась на Ютуб-канале Nicky Lemeshko в 2014 году, но успеха не получила. В 2016 на канале Lera Gr появилось схожее видео, но с новым названием «КАМЕНЬ Я НЕ ДАМ» и приближением камеры к ящеру. Оно, в отличие от первого ролика, на сегодняшний день набрало свыше 4,9 млн просмотров.</p>
+            <p>Полезные ссылки:</p>
+            <ul>
+                <li><a href="https://www.youtube.com/watch?v=64TCo-9BD_U">Видео</a></li>
+            </ul>
+        </div>
+    </div>
+    
+    <div class="container">
+        <div class="column">
+            <h2>Любимое место</h2>
+            <img src="https://pp.userapi.com/c849420/v849420365/1050c3/epTMNTlb_x4.jpg" alt="Любимое место">
+            <p>Центр «Снежинка». Здесь созданы условия для подготовки атлетов к самым статусным спортивным состязаниям, среди которых олимпиада и различные кубки мира. Состоит из 2 комплексов: Биатлонный и Горнолыжный.</p>
+            <p>Полезные ссылки:</p>
+            <ul>
+                <li><a href="http://snezhinka.chgafkis.ru">Официальный сайт</a></li>
+                <li><a href="https://vk.com/fcpsneg">Группа в ВК</a></li>
+            </ul>
+        </div>
+        
+        <div class="column">
+            <h2>Форма опроса</h2>
+            <form action="https://example.com/fake" method="post">
+                <label>
+                    <input type="checkbox" name="option1" value="1"> Вариант 1
+                </label><br>
+                <label>
+                    <input type="checkbox" name="option2" value="2"> Вариант 2
+                </label><br>
+                <label>
+                    <input type="radio" name="option3" value="3"> Вариант 3
+                </label><br>
+                <label>
+                    <select name="option4">
+                        <option value="4">Вариант 4</option>
+                        <option value="5">Вариант 5</option>
+                        <option value="6">Вариант 6</option>
+                    </select>
+                </label><br>
+                <input type="submit" value="Отправить">
+            </form>
+        </div>
+    </div>
+    
+    <footer>
+        &copy; 2023 год
+    </footer>
+</body>
+</html>
