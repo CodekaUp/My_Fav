@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Моя страница</title>
+    <style>
+        body {
+            background-color: #9fa1a1;
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background-color: #333;
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .container {
+            display: flex;
+            justify-content: center;
+            margin: 20px;
+        }
+
+        .column {
+            flex: 1;
+            margin: 10px;
+            padding: 20px;
+            background-color: #fff;
+            box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+        }
+
+            .column form {
+                padding: 1em;
+            }
+
+                .column form label {
+                    margin-bottom: 5px;
+                }
+
+                .column form input[type="checkbox"],
+                .column form input[type="radio"] {
+                    margin-right: 5px;
+                }
+
+        img {
+            max-width: 100%;
+            height: auto;
+        }
+
+        .image {
+            margin-bottom: 10px;
+        }
+
+
+        footer {
+            background-color: #333;
+            color: #fff;
+            padding: 10px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Моя страница</h1>
+    </header>
+
+    <div class="container">
+        <div class="column">
+            <h2>Любимый язык программирования</h2>
+            <img src="https://fuzeservers.ru/wp-content/uploads/1/7/8/178f79c7babe84b5b5a5afda2747b9a9.jpeg" alt="Любимый язык программирования">
+            <p> C# - cовременный объектно-ориентированный и типобезопасный язык программирования. C# позволяет разработчикам создавать разные типы безопасных и надежных приложений, выполняющихся в .NET.</p>
+            <p>Полезные ссылки:</p>
+            <ul>
+                <li><a href="https://metanit.com/sharp/">Metanit</a></li>
+                <li><a href="https://habr.com/ru/hub/csharp/">Habr</a></li>
+                <li><a href="https://learn.microsoft.com/ru-ru/dotnet/csharp/">Документация по C#</a></li>
+            </ul>
+        </div>
+
+        <div class="column">
+            <h2>Любимая картина</h2>
+            <img src="https://kartinkof.club/uploads/posts/2022-03/1648208849_5-kartinkof-club-p-kamen-ya-ne-dam-mem-5.jpg" alt="Любимая картинка">
+            <p>Мем – «Камень я не дам». Мем появился благодаря культовой ролевой игре «Проклятые земли».Впервые вырезанная фраза ящера появилась на Ютуб-канале Nicky Lemeshko в 2014 году, но успеха не получила. В 2016 на канале Lera Gr появилось схожее видео, но с новым названием «КАМЕНЬ Я НЕ ДАМ» и приближением камеры к ящеру. Оно, в отличие от первого ролика, на сегодняшний день набрало свыше 4,9 млн просмотров.</p>
+            <p>Полезные ссылки:</p>
+            <ul>
+                <li><a href="https://www.youtube.com/watch?v=64TCo-9BD_U">Видео</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="column">
+            <h2>Любимое место</h2>
+            <img src="https://pp.userapi.com/c849420/v849420365/1050c3/epTMNTlb_x4.jpg" alt="Любимое место">
+            <p>Центр «Снежинка». Здесь созданы условия для подготовки атлетов к самым статусным спортивным состязаниям, среди которых олимпиада и различные кубки мира. Состоит из 2 комплексов: Биатлонный и Горнолыжный.</p>
+            <p>Полезные ссылки:</p>
+            <ul>
+                <li><a href="http://snezhinka.chgafkis.ru">Официальный сайт</a></li>
+                <li><a href="https://vk.com/fcpsneg">Группа в ВК</a></li>
+            </ul>
+        </div>
+
+        <div class="column">
+           <div id="react-root"></div>
+
+    <script src="https://unpkg.com/react/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/babel-standalone/babel.min.js"></script>
+
+    <script type="text/babel">
+        class Form extends React.Component {
+            constructor(props) {
+                super(props);
+                this.state = {
+                    selectedOption: '',
+                    checkboxValues: [],
+                    selectedValue: '',
+                    textInput: ''
+                };
+            }
+
+            handleOptionChange = event => {
+                this.setState({ selectedOption: event.target.value });
+            };
+
+            handleCheckboxChange = event => {
+                const value = event.target.value;
+                if (event.target.checked) {
+                    this.setState(prevState => ({
+                        checkboxValues: [...prevState.checkboxValues, value]
+                    }));
+                } else {
+                    this.setState(prevState => ({
+                        checkboxValues: prevState.checkboxValues.filter(val => val !== value)
+                    }));
+                }
+            };
+
+            handleSelectChange = event => {
+                this.setState({ selectedValue: event.target.value });
+            };
+
+            handleInputChange = event => {
+                this.setState({ textInput: event.target.value });
+            };
+
+            handleSubmit = event => {
+                event.preventDefault();
+                const { selectedOption, checkboxValues, selectedValue, textInput } = this.state;
+                const message = `Выбрано: ${selectedOption}, Чекбоксы: ${checkboxValues}, Cписок: ${selectedValue}, Текст: ${textInput}`;
+                alert(message);
+            };
+
+            render() {
+                const { selectedOption, checkboxValues, selectedValue, textInput } = this.state;
+
+                return (
+                    <form onSubmit={this.handleSubmit}>
+                        <h2>Форма опроса</h2>
+
+                        <div>
+                            <p>Нравится ли вам данная страница?</p>
+                            <label>
+                                <input
+                                    type="radio"
+                                    name="option"
+                                    value="option1"
+                                    checked={selectedOption === 'option1'}
+                                    onChange={this.handleOptionChange}
+                                /> Да
+                            </label>
+                            <label>
+                                <input
+                                    type="radio"
+                                    name="option"
+                                    value="option2"
+                                    checked={selectedOption === 'option2'}
+                                    onChange={this.handleOptionChange}
+                                /> Нет
+                            </label>
+                        </div>
+
+                        <div>
+                            <p>Выберите языки программирования которые вам знакомы:</p>
+                            <label>
+                                <input
+                                    type="checkbox"
+                                    name="checkbox"
+                                    value="checkbox1"
+                                    checked={checkboxValues.includes('checkbox1')}
+                                    onChange={this.handleCheckboxChange}
+                                /> C++
+                            </label>
+                            <label>
+                                <input
+                                    type="checkbox"
+                                    name="checkbox"
+                                    value="checkbox2"
+                                    checked={checkboxValues.includes('checkbox2')}
+                                    onChange={this.handleCheckboxChange}
+                                /> Java
+                            </label>
+                            <label>
+                                <input
+                                    type="checkbox"
+                                    name="checkbox"
+                                    value="checkbox3"
+                                    checked={checkboxValues.includes('checkbox3')}
+                                    onChange={this.handleCheckboxChange}
+                                /> Python
+                            </label>
+                        </div>
+
+                        <div>
+                            <p>Сколько будет 2 + 2 = ?:</p>
+                            <select value={selectedValue} onChange={this.handleSelectChange}>
+                                <option value="">Выберите</option>
+                                <option value="value1">2</option>
+                                <option value="value2">6</option>
+                                <option value="value3">4</option>
+                            </select>
+                        </div>
+
+                        <div>
+                            <p>Введите текст:</p>
+                            <input
+                                type="text"
+                                value={textInput}
+                                onChange={this.handleInputChange}
+                            />
+                        </div>
+
+                        <button type="submit">Отправить</button>
+                    </form>
+                );
+            }
+        }
+
+        ReactDOM.render(<Form />, document.getElementById('react-root'));
+    </script>
+            </form>
+        </div>
+    </div>
+    <div class="container">
+        <div class="column">
+            <h2>Гифки с котиками</h2>
+            <button type="button" id="get">Получить гифку</button>
+            <div id="result" class="image"></div>
+
+            <script>
+               function getImage() {
+                 const requestUrl='https://api.thecatapi.com/v1/images/search?mime_types=gif';
+                 fetch(requestUrl)
+                   .then(response => response.json())
+                   .then(data => {
+                 const imageUrl=data[0].url;
+                 const imageElement=document.createElement('img');
+                 imageElement.src=imageUrl;
+                 imageElement.alt='Котик';
+                 document.querySelector('#result').appendChild(imageElement);
+                 })
+                 .catch(error => console.error(error));
+               }
+               document.querySelector('#get').addEventListener('click', () => {
+                 getImage();
+               });
+            </script>
+
+        </div>
+    </div>
+
+    <footer>
+        &copy; 2023 год
+    </footer>
+</body>
+</html>
